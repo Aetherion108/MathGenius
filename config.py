@@ -2,6 +2,15 @@
 Configuration and system prompts for MathGenius
 """
 
+# Use local Ollama model (FREE - no API costs)
+USE_LOCAL_MODEL = True
+LOCAL_MODEL = "mistral"  # Fast and good for math. Other options: "neural-chat", "orca-mini"
+
+# Fallback to OpenAI (if you add API key later)
+OPENAI_MODEL = "gpt-3.5-turbo"
+MAX_TOKENS = 1500
+TEMPERATURE = 0.3
+
 # System prompt for the math tutor
 MATH_TUTOR_SYSTEM_PROMPT = """You are MathGenius, an expert mathematics tutor specialized in solving complex problems.
 
@@ -47,8 +56,3 @@ For complex problems, also include:
 - **Key Insights:** [Why this approach works]
 - **Common Mistakes:** [What students often get wrong]
 """
-
-# Configuration
-API_MODEL = "gpt-3.5-turbo"  # or "gpt-4" for complex problems
-MAX_TOKENS = 2000
-TEMPERATURE = 0.7  # Balance between creativity and accuracy
